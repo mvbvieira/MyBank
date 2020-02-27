@@ -18,6 +18,12 @@ SimpleCov.start 'rails' do
   add_filter 'app/mailers/application_mailer.rb'
 end
 
+Capybara.register_driver :selenium_chrome do|app|
+  Capybara::Selenium::Driver.new(app, browser: :chrome)
+end
+
+Capybara.javascript_driver = :selenium_chrome
+
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end
