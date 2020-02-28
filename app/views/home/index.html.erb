@@ -3,4 +3,5 @@
 <% if user_signed_in? %>
   <%= current_user.email %>
   <%= link_to 'Create Payment Method', new_payment_method_path %>
+  <%= link_to 'Create Revenue', new_revenue_path %>
 <% end %>

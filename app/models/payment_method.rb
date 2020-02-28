@@ -1,6 +1,8 @@
 class PaymentMethod < ApplicationRecord
   belongs_to :user
 
+  has_many :revenues, dependent: :destroy
+
   validates :description, presence: true
 
   before_create :set_code

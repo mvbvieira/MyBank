@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :payment_method do
-    description { Faker::Lorem.words(number: 2) }
+    description { Faker::Lorem.sentence(word_count: 2) }
     user { nil }
   end
 end

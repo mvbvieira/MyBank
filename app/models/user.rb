@@ -7,4 +7,5 @@ class User < ApplicationRecord
   enum role: %i[client admin]
 
   has_many :payment_methods, dependent: :destroy
+  has_many :revenues, dependent: :destroy
 end

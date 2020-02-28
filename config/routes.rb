@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   resources :payment_methods, only: %i[new create index show]
+  resources :revenues, only: %i[new create index show]
 end

@@ -1,0 +1,26 @@
+<%= form_for @revenue do |f| %>
+
+  <%= f.label :description, "Description" %>
+  <%= f.text_field :description %>
+
+  <%= f.label :_type, "Type" %>
+  <%= f.text_field :_type %>
+
+  <%= f.label :brand, "Brand" %>
+  <%= f.text_field :brand %>
+
+  <%= f.label :amount, "Amount" %>
+  <%= f.number_field :amount %>
+
+  <%= f.label :received_at, "Received_at" %>
+  <%= f.date_field :received_at, value: Date.today%>
+
+  <%= f.label "Status" %>
+  <%= select_tag(:status, options_for_select(@status)) %>
+
+  <%= f.label "Payment Method" %>
+  <%= f.collection_select(:payment_method_id, @payment_methods, :id, :description) %>
+
+  <%= f.submit "Create" %>
+
+<% end %>
