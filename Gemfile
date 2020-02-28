@@ -44,8 +44,8 @@ end
 
 group :test do
   gem 'launchy'
-  gem 'simplecov', require: false
   gem 'selenium-webdriver'
+  gem 'simplecov', require: false
   gem 'webdrivers'
 end
 

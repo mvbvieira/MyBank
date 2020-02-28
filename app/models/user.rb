@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   enum role: %i[client admin]
+
+  has_many :payment_methods, dependent: :destroy
 end
