@@ -4,4 +4,5 @@ Rails.application.routes.draw do
 
   resources :payment_methods, only: %i[new create index show]
   resources :revenues, only: %i[new create index show]
+  resources :expenses, only: %i[new create index show]
 end

@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_28_120345) do
+ActiveRecord::Schema.define(version: 2020_02_29_153813) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "expenses", force: :cascade do |t|
+    t.string "description"
+    t.date "due_at"
+    t.integer "status"
+    t.decimal "value"
+    t.date "payed_at"
+    t.bigint "payment_method_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["payment_method_id"], name: "index_expenses_on_payment_method_id"
+    t.index ["user_id"], name: "index_expenses_on_user_id"
+  end
 
   create_table "payment_methods", force: :cascade do |t|
     t.string "description"
@@ -55,6 +69,8 @@ ActiveRecord::Schema.define(version: 2020_02_28_120345) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "expenses", "payment_methods"
+  add_foreign_key "expenses", "users"
   add_foreign_key "payment_methods", "users"
   add_foreign_key "revenues", "payment_methods"
   add_foreign_key "revenues", "users"
