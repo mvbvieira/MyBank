@@ -1,0 +1,23 @@
+<%= form_for @expense do |f| %>
+
+  <%= f.label :description, "Description" %>
+  <%= f.text_field :description %>
+
+  <%= f.label :value, "Value" %>
+  <%= f.number_field :value %>
+
+  <%= f.label :payed_at, "Payed_at" %>
+  <%= f.date_field :payed_at, value: Date.today%>
+
+  <%= f.label :due_at, "Due_at" %>
+  <%= f.date_field :due_at, value: Date.today%>
+
+  <%= f.label "Status" %>
+  <%= select_tag(:status, options_for_select(@status)) %>
+
+  <%= f.label "Payment Method" %>
+  <%= f.collection_select(:payment_method_id, @payment_methods, :id, :description) %>
+
+  <%= f.submit "Create" %>
+
+<% end %>

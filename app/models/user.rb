@@ -8,4 +8,5 @@ class User < ApplicationRecord
 
   has_many :payment_methods, dependent: :destroy
   has_many :revenues, dependent: :destroy
+  has_many :expenses, dependent: :destroy
 end
