@@ -4,7 +4,7 @@
   <%= f.text_field :description %>
 
   <%= f.label :value, "Value" %>
-  <%= f.decimal :value, precision: 10, scale: 2 %>
+  <%= f.number_field :value %>
 
   <%= f.label :payed_at, "Payed_at" %>
   <%= f.date_field :payed_at, value: Date.today%>

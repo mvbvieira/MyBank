@@ -10,7 +10,7 @@
   <%= f.text_field :brand %>
 
   <%= f.label :amount, "Amount" %>
-  <%= f.decimal :amount, precision: 10, scale: 2 %>
+  <%= f.number_field :amount %>
 
   <%= f.label :received_at, "Received_at" %>
   <%= f.date_field :received_at, value: Date.today%>
