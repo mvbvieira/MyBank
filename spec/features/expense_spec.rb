@@ -7,7 +7,8 @@ RSpec.feature "Expenses", type: :feature do
 
     visit root_path
 
-    click_on 'Create Expense'
+    click_on 'New'
+    click_on 'Expense'
 
     expect(current_path).to eq(new_expense_path)
   end

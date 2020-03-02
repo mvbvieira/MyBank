@@ -9,4 +9,20 @@ class User < ApplicationRecord
   has_many :payment_methods, dependent: :destroy
   has_many :revenues, dependent: :destroy
   has_many :expenses, dependent: :destroy
+
+  def account_balance
+    revenues_sum - expense_sum
+  end
+
+  private
+
+  def revenues_sum
+    return revenues.sum(&:amount) if revenues.present?
+    0.0
+  end
+
+  def expense_sum
+    return expenses.sum(&:value) if expenses.present?
+    0.0
+  end
 end

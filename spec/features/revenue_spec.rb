@@ -7,7 +7,8 @@ RSpec.feature 'Revenues', type: :feature do
 
     visit root_path
 
-    click_on 'Create Revenue'
+    click_on 'New'
+    click_on 'Revenue'
 
     expect(current_path).to eq(new_revenue_path)
   end

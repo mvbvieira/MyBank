@@ -4,7 +4,7 @@ class CreateExpenses < ActiveRecord::Migration[6.0]
       t.string :description
       t.date :due_at
       t.integer :status
-      t.decimal :value
+      t.decimal :value, default: 0.0
       t.date :payed_at
       t.references :payment_method, null: false, foreign_key: true
       t.references :user, null: false, foreign_key: true

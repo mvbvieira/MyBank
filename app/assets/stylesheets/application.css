@@ -12,4 +12,12 @@
  *
  *= require_tree .
  *= require_self
+ *= require_navbar
  */
+
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+

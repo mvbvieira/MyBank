@@ -6,7 +6,8 @@ RSpec.feature 'PaymentMethods', type: :feature do
 
     visit root_path
 
-    click_on 'Create Payment Method'
+    click_on 'New'
+    click_on 'Payment Method'
 
     expect(current_path).to eq(new_payment_method_path)
   end

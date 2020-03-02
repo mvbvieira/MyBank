@@ -3,8 +3,8 @@
 
 # Admin User
 
-User.create(email: 'marcos@mybank.com', password: '123456', role: 'admin')
+User.create(email: 'admin@mybank.com', username: 'admin', password: '123456', role: 'admin')
 
 # Create PaymentMethods
 
-PaymentMethod.create(user: User.where(email: 'marcos@mybank.com').last, description: 'Credit Card')
+PaymentMethod.create(user: User.where(email: 'admin@mybank.com').last, description: 'Credit Card')

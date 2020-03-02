@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2020_02_29_153813) do
     t.string "description"
     t.date "due_at"
     t.integer "status"
-    t.decimal "value"
+    t.decimal "value", default: "0.0"
     t.date "payed_at"
     t.bigint "payment_method_id", null: false
     t.bigint "user_id", null: false
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2020_02_29_153813) do
     t.string "_type"
     t.string "brand"
     t.integer "status"
-    t.decimal "amount"
+    t.decimal "amount", default: "0.0"
     t.date "received_at"
     t.bigint "payment_method_id", null: false
     t.bigint "user_id", null: false

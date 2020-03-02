@@ -1,0 +1,22 @@
+<div class="topnav" id="myTopnav">
+  <a href="/" class="active">MyBank</a>
+  <div class="dropdown">
+    <button class="dropbtn">New
+      <i class="fa fa-caret-down"></i>
+    </button>
+
+    <div class="dropdown-content">
+      <a href="/payment_methods/new">Payment Method</a>
+      <a href="/expenses/new">Expense</a>
+      <a href="/revenues/new">Revenue</a>
+    </div>
+  </div>
+
+  <% if user_signed_in? %>
+    <div class="menu-login">
+      <a href="#"><%= current_user.email %></a>
+      <a href="#">R$ <%= current_user.account_balance %></a>
+    </div>
+  <% end %>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
